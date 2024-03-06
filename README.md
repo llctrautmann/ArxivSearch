@@ -43,6 +43,8 @@ Run the main script to start the process:
 python src/main.py
 ```
 
+Ideally setup with `crontab` for daily execution. 
+
 The script performs the following steps:
 1. Reads the current status of papers from `Relevance.txt` and `SubmittedDate.txt`.
 2. Searches for new papers based on the specified criteria.
