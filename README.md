@@ -27,12 +27,14 @@ The ArXiv Paper Parser is a Python-based tool designed to automate the process o
     APP_TOKEN=<your-app-token>
     USER_TOKEN=<your-user-token>
     ```
+The .env file need to be setup by the user following the above example.
 
 4. **Configuration**: Adjust search parameters in `src/main.py` as needed.
     ```python:src/main.py
-    field="cs.cv OR cat:eess.iv",
-    title_keyword="low field MRI OR all:low field MRI OR ti:low field magnetic resonance imaging"
+    field="cat:cs.cv OR cat:eess.iv",
+    title_keyword="ti:low field MRI OR all:low field MRI OR ti:low field magnetic resonance imaging"
     ```
+Information on categories can be found [here](https://info.arxiv.org/help/api/user-manual.html#query_details) and general taxonomy [here](https://arxiv.org/category_taxonomy).
 
 ## Usage
 
