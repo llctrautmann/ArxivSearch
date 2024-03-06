@@ -43,7 +43,7 @@ Run the main script to start the process:
 python src/main.py
 ```
 
-Ideally setup with `crontab` for daily execution. 
+Ideally setup with `crontab` for daily execution. Info for MacOS [here](https://apple.stackexchange.com/questions/402132/cronjobs-do-not-run)
 
 The script performs the following steps:
 1. Reads the current status of papers from `Relevance.txt` and `SubmittedDate.txt`.

@@ -16,6 +16,7 @@ load_dotenv(dotenv_path)
 # Access environment variables
 API_KEY = os.getenv('APP_TOKEN')
 USER_KEY = os.getenv('USER_TOKEN')
+HOME_PATH = os.getenv('HOME_PATH')
 
 # Functions
 

@@ -1,4 +1,5 @@
 from utils import *
+import os
 
 
 def main(field, title_keyword):
@@ -12,8 +13,8 @@ def main(field, title_keyword):
     4. Extracts titles from the new papers and appends them to the respective files.
     5. Pushes notifications about the new papers to a device using the Pushover API.
     """
-    current_status_relevance = read_list_from_file("Relevance.txt") # list of strings
-    current_status_submitted_date = read_list_from_file("SubmittedDate.txt") # list of strings
+    current_status_relevance = read_list_from_file(os.path.join(HOME_PATH, "Relevance.txt")) # list of strings
+    current_status_submitted_date = read_list_from_file(os.path.join(HOME_PATH, "SubmittedDate.txt")) # list of strings
 
     current_status = [current_status_relevance, current_status_submitted_date]
     headers = ["Relevance", "SubmittedDate"]
@@ -24,7 +25,7 @@ def main(field, title_keyword):
     for idx, query in enumerate(queries):
         remove_known_entries(query, current_status[idx])
         new_relevance_titles = extract_information(query)
-        # append_titles_to_file(new_relevance_titles, f"{headers[idx]}.txt")
+        append_titles_to_file(new_relevance_titles, os.path.join(HOME_PATH, f"{headers[idx]}.txt"))
 
         payload = join_tuples(turn_into_tuples(query))
 
@@ -40,6 +41,8 @@ def main(field, title_keyword):
             push_to_device(API_KEY, USER_KEY, "No new papers", f"{headers[idx]}")
 
 if __name__ == "__main__":
+    user = ["luca",'ben','kade']
+
     main(
         field="cat:cs.cv OR cat:eess.iv",
         title_keyword="ti:low field MRI OR all:low field MRI OR ti:low field magnetic resonance imaging"
