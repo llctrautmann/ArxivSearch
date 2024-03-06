@@ -156,10 +156,6 @@ def search_arvix(field="cs.cv", title_keyword="low field MRI"):
     - tuple: Two dictionaries containing search results sorted by SubmittedDate and Relevance.
     """
     client = arxiv.Client()
-    # TODO: Add multifield search for fields
-
-    if type(field) is list:
-        field = " OR cat:".join(field)
 
     # initialise searches for both SubmittedDate and Relevance
     sort_criteria = [arxiv.SortCriterion.SubmittedDate, arxiv.SortCriterion.Relevance]
@@ -167,7 +163,7 @@ def search_arvix(field="cs.cv", title_keyword="low field MRI"):
 
     for criterion in sort_criteria:
         search = arxiv.Search(
-            query=f"cat:{field} AND ti:{title_keyword}",
+            query=f"{field} AND {title_keyword}",
             max_results=50 if criterion == arxiv.SortCriterion.Relevance else 30,
             sort_by=criterion
         )

@@ -41,6 +41,6 @@ def main(field, title_keyword):
 
 if __name__ == "__main__":
     main(
-        field="cs.cv OR cat:eess.iv",
-        title_keyword="low field MRI OR all:low field MRI OR ti:low field magnetic resonance imaging"
+        field="cat:cs.cv OR cat:eess.iv",
+        title_keyword="ti:low field MRI OR all:low field MRI OR ti:low field magnetic resonance imaging"
         )
