@@ -1,5 +1,7 @@
 # ArXiv Paper Parser
 
+NOTE: THIS PROJECT IS STILL IN TESTING PHASE
+
 The ArXiv Paper Parser is a Python-based tool designed to automate the process of fetching, filtering, and notifying users about new academic papers published on the arXiv platform, based on predefined search criteria. It focuses on providing updates in specific research fields and keywords, managing a list of known papers to avoid duplicates, and pushing notifications to a user's device.
 
 ## Features
