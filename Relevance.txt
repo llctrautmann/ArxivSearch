@@ -48,7 +48,3 @@ Wavelet-based Topological Loss for Low-Light Image Denoising
 GSR-Net: Graph Super-Resolution Network for Predicting High-Resolution from Low-Resolution Functional Brain Connectomes
 Segmentation of Retinal Low-Cost Optical Coherence Tomography Images using Deep Learning
 Fast Low Rank column-wise Compressive Sensing for Accelerated Dynamic MRI
-
-
-
-

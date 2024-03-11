@@ -24,12 +24,14 @@ def main(field, title_keyword):
 
     for idx, query in enumerate(queries):
         remove_known_entries(query, current_status[idx])
-        new_relevance_titles = extract_information(query)
-        append_titles_to_file(new_relevance_titles, os.path.join(HOME_PATH, f"{headers[idx]}.txt"))
+        new_queried_titles = extract_information(query)
+
+        if len(new_queried_titles) > 0:
+            append_titles_to_file(new_queried_titles, os.path.join(HOME_PATH, f"{headers[idx]}.txt"))
 
         payload = join_tuples(turn_into_tuples(query))
 
-        if len(new_relevance_titles) > 0:
+        if len(new_queried_titles) > 0:
             parts = [part.lstrip() for part in split_text_by_hyperlinks(payload)][::-1]
 
             for idy, part in enumerate(parts):
@@ -41,9 +43,11 @@ def main(field, title_keyword):
             push_to_device(API_KEY, USER_KEY, "No new papers", f"{headers[idx]}")
 
 if __name__ == "__main__":
-    user = ["luca",'ben','kade']
-
-    main(
-        field="cat:cs.cv OR cat:eess.iv",
-        title_keyword="ti:low field MRI OR all:low field MRI OR ti:low field magnetic resonance imaging"
-        )
+    try:
+        main(
+            field="cat:cs.cv OR cat:eess.iv",
+            title_keyword="ti:low field MRI OR all:low field MRI OR ti:low field magnetic resonance imaging"
+            )
+        print("200 OK")
+    except Exception as e:
+        print(f"Error occurred: {e}")

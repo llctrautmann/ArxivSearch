@@ -28,6 +28,6 @@ Rotational Augmented Noise2Inverse for Low-dose Computed Tomography Reconstructi
 DiffuseRAW: End-to-End Generative RAW Image Processing for Low-Light Images
 Quantifying white matter hyperintensity and brain volumes in heterogeneous clinical and low-field portable MRI
 C3: High-performance and low-complexity neural compression from a single image or video
-
-
-
+Unifying Generation and Compression: Ultra-low bitrate Image Coding Via Multi-stage Transformer
+Low-Dose CT Image Reconstruction by Fine-Tuning a UNet Pretrained for Gaussian Denoising for the Downstream Task of Image Enhancement
+Embedded Deployment of Semantic Segmentation in Medicine through Low-Resolution Inputs
